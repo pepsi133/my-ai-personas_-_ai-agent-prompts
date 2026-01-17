@@ -1,0 +1,13 @@
+# IDE-specific persona directories (symlinks created by setup-personas.sh)
+.agent/rules/
+.cursor/rules/
+.github/copilot-instructions.md
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor backup files
+*~
+*.swp
+*.swo
