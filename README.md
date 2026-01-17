@@ -1,41 +1,60 @@
-# Personal AI Prompts
+# AI Persona Prompts
 
-A collection of personal prompt engineering templates for various LLMs (Gemini, Claude, GPT, etc.). These prompts were created using personal AI service subscriptions (Gemini Pro, Perplexity, and other commercial tools).
+System prompts for LLMs (Gemini, Claude, GPT). Use as custom Gems, IDE rules, or terminal agent configs.
 
-## About
+## Quick Start
 
-This repository is primarily for personal use, but everyone is free to use, modify, or adapt these prompts for their own purposes. See the [LICENSE](LICENSE) file for details.
+| Use Case | Command |
+|----------|---------|
+| **IDE (Antigravity/Cursor/Copilot)** | `./setup-personas.sh` — interactive setup, creates symlinks |
+| **Gemini Gem** | Copy `.md` content → [gemini.google.com](https://gemini.google.com) → Gems → New Gem |
+| **Claude Code** | `claude --append-system-prompt "$(cat persona.md)"` |
+| **Direct URL** | `https://raw.githubusercontent.com/USER/REPO/main/persona.md` |
 
-## Prompts
+## Personas
 
 ### Infrastructure & Cloud
-- **[GCP CLI Command Generator](gcp_CLI_command_generator.md)** - Attempts to generate `gcloud` CLI commands with strict validation rules. Useful for common operations; always verify output against official docs.
+| Persona | Description |
+|---------|-------------|
+| [GCP CLI Command Generator](gcp_CLI_command_generator.md) | `gcloud` command generation with validation |
+| [MikroTik Config Architect](mikrotik_config_architect.md) | RouterOS v7 config generation |
+| [MikroTik Script Architect](mikrotik_script_and_config_architect.md) | RouterOS + Google Apps Script integration |
 
-- **[MikroTik Config Architect](mikrotik_config_architect.md)** - Structured prompt for RouterOS v7 configuration generation. Requires PDF documentation context; LLMs struggle with v6/v7 syntax differences without it.
+### Development
+| Persona | Description |
+|---------|-------------|
+| [Peer Reviewer](peer_reviewer.md) | Academic review with citation requirements |
+| [Regex Architect](regex_architect.md) | Engine-aware regex generation |
+| [Prompt Architect](prompt_architect_agent.md) | Meta-prompt for designing system instructions |
 
-- **[MikroTik Script and Config Architect](mikrotik_script_and_config_architect.md)** - Extends MikroTik prompts with Google Apps Script integration concepts. Complex workflows still require manual validation and testing.
+### Windows & System
+| Persona | Description |
+|---------|-------------|
+| [Windows Diagnostics Architect](windows_system_diagnostics_and_resolution_architect.md) | WSL2/Windows troubleshooting, Antigravity IDE fixes |
+| [Windows 11 Annoyances Fixer](windows_11_annoynances_fixer.md) | Native tools for common Win11 issues |
+| [PowerToys Context](powertoys_context.md) | PowerToys v0.96+ reference |
 
-### Development & Code
-- **[Peer Reviewer](peer_reviewer.md)** - Academic peer review framework emphasizing citation-backed critique. Works best for conceptual/theoretical content; citation accuracy must be verified.
+### Productivity
+| Persona | Description |
+|---------|-------------|
+| [Task Prioritiser (ADHD)](task_prioritiser_for_adhd-ers.md) | Pomodoro-based task breakdown |
+| [Garmin Workouts Calendar](garmin_daily_workouts_calendar_adder.md) | Parse workout screenshots to calendar |
 
-- **[Regex Architect](regex_architect.md)** - Regex generation with engine-specific syntax awareness. Good for straightforward patterns; complex lookaheads and performance optimization need testing.
+### Creative
+| Persona | Description |
+|---------|-------------|
+| [Vector Schematic Generator](vector-image-schematic-prompt_generator.md) | Monochromatic icon/vector prompts |
 
-### Productivity & Workflows
-- **[Task Prioritiser for ADHD-ers](task_prioritiser_for_adhd-ers.md)** - Structured task breakdown using Pomodoro slots. Provides external framework for time-blind planning; effectiveness depends on honest user input.
+## IDE Support
 
-- **[Garmin Daily Workouts Calendar Adder](garmin_daily_workouts_calendar_adder.md)** - Structured approach for parsing Garmin workout screenshots into calendar format. OCR quality and repeat block complexity affect accuracy.
+The `setup-personas.sh` script handles:
 
-### Windows & System Configuration
-- **[Windows 11 Annoyances Fixer](windows_11_annoynances_fixer.md)** - Troubleshooting framework prioritizing native tools over third-party solutions. PowerToys version-specific; registry edits require careful review.
-
-- **[PowerToys Context](powertoys_context.md)** - Reference document for PowerToys v0.96+ feature names and capabilities. Static snapshot; features and executables change between versions.
-
-### Design & Creative
-- **[Vector Image Schematic Prompt Generator](vector-image-schematic-prompt_generator.md)** - Template for monochromatic vector/icon prompts in image generators. Results vary significantly by AI model and require iteration.
-
-### Meta
-- **[Prompt Architect Agent](prompt_architect_agent.md)** - Meta-prompt for designing system instructions with architectural patterns. Useful framework; generated prompts still need real-world testing and refinement.
+```
+Antigravity  → .agent/rules/*.md
+Cursor       → .cursor/rules/*.md  
+Copilot      → .github/copilot-instructions.md
+```
 
 ## License
 
-This work is licensed under the MIT License. See [LICENSE](LICENSE) for full terms. These prompts are provided as-is with no warranties or liability.
+MIT. See [LICENSE](LICENSE).
