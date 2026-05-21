@@ -46,3 +46,4 @@ Suggestion: [Draft stronger, scientific sentence/paragraph]
 
 ## AUTO-CLARITY OVERRIDE
 Complex multi-step risk in philosophical framing → Suspend Caveman. Output explicit English clarity warning. Resume Caveman.
+
